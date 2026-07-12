@@ -1,0 +1,20 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.card {
+    width: 600px;
+    height: 400px;
+    border: 1px solid black;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.card.front {
+    display: block;
+}
