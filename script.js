@@ -54,7 +54,7 @@ function buildCard(data) {
     return card;
   }
 
-const OFFSET = 3; // pixels each card behind shifts upward
+const OFFSET = 5; // pixels each card behind shifts upward
 
 function layoutCards() {
   const cards = stack.querySelectorAll('.card');
