@@ -1,28 +1,40 @@
 body {
+    overflow: hidden;
+    user-select: none;
+}
+.site-info {
+    font-family: monospace;
+    padding: 25px 0px 0px 50px;
+}
+
+.site-title {
+    font-size: large;
+    font-weight: bold;
+}
+
+.main {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    
 }
 
 .stack {
     position: relative;
     width: 600px;
     height: 400px;
-    margin-top: 100px;
 }
 
 .hole-punch {
     width: 35px;
     height: 35px;
     background-color: white;
-    border: 1px solid darkgray;
+    border: 1px solid black;
     border-radius: 50%;
     position: fixed;
-    top: 65%;
+    top: 72%;
     left: 50%;
     transform: translate(-50%);
     z-index: 9999;
@@ -34,7 +46,7 @@ body {
     top: -50px;
     width: 110px;
     height: 50px;
-    border: 1px solid darkgray;
+    border: 1px solid black;
     border-bottom: none;
     border-radius: 8px 8px 0 0;
     background-color: white;
@@ -53,7 +65,7 @@ body {
     top: 0;
     left: 0;
     background: white;
-    border: 1px solid darkgray;
+    border: 1px solid black;
     display: flex;
     box-sizing: border-box;
     padding: 10px 50px 0px 50px ;
