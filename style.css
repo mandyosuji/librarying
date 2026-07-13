@@ -23,7 +23,7 @@ body {
 
 .stack {
     position: relative;
-    width: 600px;
+    width: 700px;
     height: 400px;
 }
 
@@ -59,7 +59,7 @@ body {
 }
 
 .card {
-    width: 600px;
+    width: 700px;
     height: 400px;
     position: absolute;
     top: 0;
@@ -94,7 +94,7 @@ body {
 }
 
 .nav {
-    width: 600px;
+    width: 700px;
     display: flex;
     justify-content: space-between;
     margin-top: 50px;
