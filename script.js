@@ -29,23 +29,27 @@ function buildCard(data) {
 
     const content = document.createElement('div');
     content.className = 'content';
-
+    
     const name = document.createElement('p');
     name.className = 'library-name';
     name.innerHTML = `${data.libraryName}.`;
     content.appendChild(name);
-
-    card.appendChild(content);
-
+    
+    const details = document.createElement('div');
+    details.className = 'details';
+    
     const anecdote = document.createElement('p');
     anecdote.className = 'anecdote';
     anecdote.innerHTML = data.anecdote;
-    content.appendChild(anecdote);
-
+    details.appendChild(anecdote);
+    
     const address = document.createElement('p');
     address.className = 'address';
     address.textContent = `${data.address}.`;
-    content.appendChild(address);
+    details.appendChild(address);
+    
+    content.appendChild(details);
+    card.appendChild(content);
 
     return card;
   }
