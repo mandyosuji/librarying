@@ -1,31 +1,27 @@
-const cardData = [
-    {
-        tab: "AA",
-        tabLeft: "-1px",
-        libraryName: "Newport Public Library.",
-        address: "300 Spring St, Newport, RI 02840.",
-        anecdote: "Was in the midst of recovering from an all-nighter so maybe didn't process this visit much, but I do remember a very very cute kids area. Also asked at the front desk for a reccomendation on where to get clam chowder, had delicious clam chowder from The Red Parrot Restaurant as a result! Realized later we had actually meant to go to the Redwood Library and Athenaeum, the oldest still operating lending library in the US. No wonder it looked so modern.",
-        date: "2026\nMay 20"
-    }
-  ];
-
-// handles filling cards and stack movement!
-
 const stack = document.getElementById('stack');
 function buildCard(data) {
     const card = document.createElement('div');
     card.className = 'card';
   
     const tab = document.createElement('div');
-    if (data.tab !== undefined) {
+    if (data.tab) {
         tab.className = 'tab';
         tab.textContent = data.tab;
         if (data.tabLeft !== undefined) {
             tab.style.left = data.tabLeft;
         }
+        tab.style.cursor = 'pointer';
+        tab.addEventListener('click', () => {
+            const cards = Array.from(stack.children);
+            const index = cards.indexOf(card);
+            for (let i = 0; i < index; i++) {
+                stack.appendChild(stack.firstElementChild);
+            }
+            layoutCards();
+        });
         card.appendChild(tab);
     }
-  
+
     const date = document.createElement('p');
     date.className = 'date';
     date.textContent = data.date;
@@ -39,6 +35,8 @@ function buildCard(data) {
     name.textContent = data.libraryName;
     content.appendChild(name);
 
+    card.appendChild(content);
+
     const anecdote = document.createElement('p');
     anecdote.className = 'anecdote';
     anecdote.textContent = data.anecdote;
@@ -49,16 +47,10 @@ function buildCard(data) {
     address.textContent = data.address;
     content.appendChild(address);
 
-    card.appendChild(content);
-
     return card;
   }
-  
-  cardData.forEach(data => {
-    stack.appendChild(buildCard(data));
-  });
 
-const OFFSET = 5; // pixels each card behind shifts upward
+const OFFSET = 3; // pixels each card behind shifts upward
 
 function layoutCards() {
   const cards = stack.querySelectorAll('.card');
@@ -84,4 +76,33 @@ prevBtn.addEventListener('click', (e) => {
   layoutCards();
 });
 
-layoutCards();
+// get library data!
+const SHEET_ID = '1I3ZyuhpGo3Sf0B7YBrqEeGOVVxyp8qwqp58jJ3VUkV8';
+const SHEET_NAME = 'libraries';
+const url = `https://docs.google.com/spreadsheets/gviz/tq?tqx=out:json&sheet=${SHEET_NAME}`;
+
+fetch(`https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&sheet=${SHEET_NAME}`)
+  .then(res => res.text())
+  .then(text => {
+    // Google wraps the JSON in a JS function call — strip that off
+    const json = JSON.parse(text.substring(47, text.length - 2));
+
+    const cardData = json.table.rows.map(row => {
+      const cells = row.c;
+      return {
+        tab: cells[0]?.v || undefined,
+        tabLeft: cells[1]?.v ?? undefined,
+        libraryName: cells[2]?.v ?? '',
+        address: cells[3]?.v ?? '',
+        anecdote: cells[4]?.v ?? '',
+        date: cells[5]?.v ?? ''
+      };
+    });
+
+    cardData.forEach(data => {
+      stack.appendChild(buildCard(data));
+    });
+
+    layoutCards();
+  })
+  .catch(err => console.error('Failed to load sheet data:', err));
