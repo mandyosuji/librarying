@@ -2,6 +2,7 @@ body {
     overflow: hidden;
     user-select: none;
 }
+
 .site-info {
     font-family: monospace;
     padding: 25px 0px 0px 50px;
@@ -15,7 +16,7 @@ body {
 .main {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content:center;
     align-items: center;
     height: 100vh;
     margin: 0;
@@ -34,7 +35,7 @@ body {
     border: 1px solid black;
     border-radius: 50%;
     position: fixed;
-    top: 72%;
+    top: 740px;
     left: 50%;
     transform: translate(-50%);
     z-index: 9999;
@@ -94,11 +95,56 @@ body {
 }
 
 .nav {
-    width: 700px;
+    width: 630px;
+    height: 1.5rem;
+    line-height: 4rem;
     display: flex;
     justify-content: space-between;
-    margin-top: 50px;
+    padding-top: 10px;
     font-family: monospace;
+    font-size: 3rem;
+    position: fixed;
+    top: 740px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9998;
+}
+
+.nav a {
+    display: inline-flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 1.2rem;
+    height: 4rem;
+    transform: rotate(-90deg);
+}
+
+.nav a:first-child:hover {
+    font-size: 0;
+}
+
+.nav a:first-child:hover::before {
+    content: "\261A";
+    font-size: 3rem;
+    position: relative;
+    top: -8px;
+    left: -8px;
+}
+
+.nav a:last-child {
+    transform: rotate(-270deg);
+}
+
+.nav a:last-child:hover {
+    font-size: 0;
+}
+
+.nav a:last-child:hover::before {
+    content: "\261A";
+    font-size: 3rem;
+    position: relative;
+    top: -8px;
+    left: -8px;
 }
 
 a:link, a:visited {
