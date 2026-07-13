@@ -32,19 +32,19 @@ function buildCard(data) {
 
     const name = document.createElement('p');
     name.className = 'library-name';
-    name.textContent = data.libraryName;
+    name.innerHTML = `${data.libraryName}.`;
     content.appendChild(name);
 
     card.appendChild(content);
 
     const anecdote = document.createElement('p');
     anecdote.className = 'anecdote';
-    anecdote.textContent = data.anecdote;
+    anecdote.innerHTML = data.anecdote;
     content.appendChild(anecdote);
 
     const address = document.createElement('p');
     address.className = 'address';
-    address.textContent = data.address;
+    address.textContent = `${data.address}.`;
     content.appendChild(address);
 
     return card;
@@ -104,5 +104,42 @@ fetch(`https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&s
     });
 
     layoutCards();
+
+    function parseDate(dateString) {
+        if (!dateString) return null;
+    
+        const parts = dateString.trim().replace(/\\n/g, '\n').split('\n').map(p => p.trim());
+        const year = parts[0];
+        const monthDay = parts[1]; // e.g. "Mar 23"
+    
+        const date = new Date(`${monthDay} ${year}`);
+        return isNaN(date) ? null : date;
+    }
+    
+    function getMostRecentDateOverall(cardData) {
+        const allDates = cardData
+            .map(data => parseDate(data.date))
+            .filter(d => d !== null);
+    
+        if (allDates.length === 0) return null;
+    
+        return new Date(Math.max(...allDates.map(d => d.getTime())));
+    }
+
+    const overallMostRecent = getMostRecentDateOverall(cardData);
+    const currentDate = new Date();
+    const msDifference = currentDate - overallMostRecent; 
+    const daysDifference = Math.floor(msDifference / (1000 * 60 * 60 * 24));
+
+    console.log(overallMostRecent);
+    console.log(currentDate); 
+    console.log(daysDifference); 
+
+    const daysContainer = document.getElementById('days-since');
+
+    const daysSince = document.createElement('p');
+    daysSince.textContent = `${daysDifference} days since last library visit.`;
+    daysContainer.appendChild(daysSince);
+
   })
   .catch(err => console.error('Failed to load sheet data:', err));
