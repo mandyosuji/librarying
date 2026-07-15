@@ -135,10 +135,6 @@ fetch(`https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&s
     const msDifference = currentDate - overallMostRecent; 
     const daysDifference = Math.floor(msDifference / (1000 * 60 * 60 * 24));
 
-    console.log(overallMostRecent);
-    console.log(currentDate); 
-    console.log(daysDifference); 
-
     const daysContainer = document.getElementById('days-since');
 
     const daysSince = document.createElement('p');
