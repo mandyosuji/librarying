@@ -142,7 +142,13 @@ fetch(`https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&s
     const daysContainer = document.getElementById('days-since');
 
     const daysSince = document.createElement('p');
-    daysSince.textContent = `${daysDifference} days since last library visit.`;
+    if (daysDifference == 1) {
+        daysSince.textContent = `${daysDifference} day since last library visit.`;
+    }
+    else {
+        daysSince.textContent = `${daysDifference} days since last library visit.`;
+    }
+    
     daysContainer.appendChild(daysSince);
 
   })
