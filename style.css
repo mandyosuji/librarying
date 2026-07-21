@@ -5,12 +5,19 @@ body {
 
 .site-info {
     font-family: monospace;
-    padding: 25px 0px 0px 50px;
+    padding: 25px 100px 0px 50px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
 }
 
 .site-title {
     font-size: large;
     font-weight: bold;
+}
+
+.about {
+    font-size: larger;
 }
 
 .main {
