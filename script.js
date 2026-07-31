@@ -8,7 +8,7 @@ function buildCard(data) {
         tab.className = 'tab';
         tab.textContent = data.tab;
         if (data.tabLeft !== undefined) {
-            tab.style.left = data.tabLeft;
+          tab.style.left = scaledLeft(data.tabLeft);
         }
         tab.style.cursor = 'pointer';
         tab.addEventListener('click', () => {
@@ -55,6 +55,12 @@ function buildCard(data) {
   }
 
 const OFFSET = 5; // pixels each card behind shifts upward
+
+function scaledLeft(px) {
+  const value = parseFloat(px); // strips "px" if present, handles "150" or "150px"
+  const vwEquivalent = (value / 700) * 90; // same 700px→90vw ratio as the card
+  return `min(${value}px, ${vwEquivalent}vw)`;
+}
 
 function layoutCards() {
   const cards = stack.querySelectorAll('.card');
