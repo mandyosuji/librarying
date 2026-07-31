@@ -1,5 +1,5 @@
 html, body {
-    overflow: clip;
+    overflow: hidden;
     user-select: none;
     height: 100%;
 }
@@ -165,7 +165,7 @@ a:hover {
     font-weight: bold;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 710px) {
     .site-info {
         flex-direction: column;
         align-items: center;
