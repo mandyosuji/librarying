@@ -172,7 +172,6 @@ a:hover {
         align-items: center;
         padding: 10vh 0vh 10vh 0vh;
     }
-
     .site-info div {
         display: flex;
         flex-direction: column;
@@ -185,9 +184,13 @@ a:hover {
     .main {
         transform: scale(0.6);
         transform-origin: top center;
-        font-size: 1.1rem;
+        font-size: 1.5rem;
     }
     .nav, .hole-punch {
         display: none;
     }
+    .card {
+        height: 700px;
+    }
+
   }
