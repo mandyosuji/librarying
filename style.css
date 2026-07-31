@@ -1,6 +1,7 @@
 html, body {
-    overflow: hidden;
+    overflow: clip;
     user-select: none;
+    height: 100%;
 }
 
 .site-info {
