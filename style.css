@@ -166,9 +166,26 @@ a:hover {
 }
 
 @media screen and (max-width: 576px) {
+    .site-info {
+        flex-direction: column;
+        padding-bottom: 20%;
+        align-items: center;
+        padding: 10vh 0vh 10vh 0vh;
+    }
+
+    .site-info div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .days-since {
+        padding-bottom: 10%;
+    }
     .main {
         transform: scale(0.6);
         transform-origin: top center;
+        font-size: 1.1rem;
     }
     .nav, .hole-punch {
         display: none;
