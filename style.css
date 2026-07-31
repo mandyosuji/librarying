@@ -16,6 +16,10 @@ body {
     font-weight: bold;
 }
 
+.about {
+    font-size: normal;
+}
+
 .main {
     display: flex;
     flex-direction: column;
