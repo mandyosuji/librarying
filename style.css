@@ -16,10 +16,6 @@ body {
     font-weight: bold;
 }
 
-.about {
-    font-size: larger;
-}
-
 .main {
     display: flex;
     flex-direction: column;
