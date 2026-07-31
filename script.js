@@ -80,6 +80,11 @@ prevBtn.addEventListener('click', (e) => {
   layoutCards();
 });
 
+stack.addEventListener('touchend', (e) => {
+  e.preventDefault();
+  goNext();
+});
+
 // get library data!
 const SHEET_ID = '1I3ZyuhpGo3Sf0B7YBrqEeGOVVxyp8qwqp58jJ3VUkV8';
 const SHEET_NAME = 'libraries';
