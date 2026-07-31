@@ -164,3 +164,9 @@ a:hover {
     font-style: oblique;
     font-weight: bold;
 }
+
+@media screen and (max-width: 576px) {
+    .body {
+        background-color: blue;
+    }
+  }
