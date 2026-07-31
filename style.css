@@ -42,8 +42,8 @@ html, body {
     background-color: white;
     border: 1px solid black;
     border-radius: 50%;
-    position: fixed;
-    top: 740px;
+    position: absolute;
+    bottom: 20px;
     left: 50%;
     transform: translate(-50%);
     z-index: 9999;
@@ -111,8 +111,8 @@ html, body {
     padding-top: 10px;
     font-family: monospace;
     font-size: 3rem;
-    position: fixed;
-    top: 740px;
+    position: absolute;
+    bottom: 25px;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 9998;
@@ -180,16 +180,17 @@ a:hover {
     .days-since {
         padding-bottom: 25px;
     }
+
     .main {
         transform: scale(0.6);
         transform-origin: top center;
         font-size: 1.5rem;
     }
-    .nav, .hole-punch {
-        display: none;
+
+    .stack {
+        height: 700px;
     }
     .card {
         height: 700px;
     }
-
   }
