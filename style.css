@@ -166,7 +166,11 @@ a:hover {
 }
 
 @media screen and (max-width: 576px) {
-    .body {
-        background-color: blue;
+    .main {
+        transform: scale(0.6);
+        transform-origin: top center;
+    }
+    .nav, .hole-punch {
+        display: none;
     }
   }
