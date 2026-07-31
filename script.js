@@ -54,7 +54,10 @@ function buildCard(data) {
     return card;
   }
 
-const OFFSET = 5; // pixels each card behind shifts upward
+// const OFFSET = 5; // pixels each card behind shifts upward
+function getOffset() {
+  return window.matchMedia('(max-width: 710px)').matches ? 2 : 5;
+}
 
 function scaledLeft(px) {
   const value = parseFloat(px); // strips "px" if present, handles "150" or "150px"
@@ -64,9 +67,10 @@ function scaledLeft(px) {
 
 function layoutCards() {
   const cards = stack.querySelectorAll('.card');
+  const offset = getOffset();
   cards.forEach((card, i) => {
-    card.style.transform = `translateY(${-i * OFFSET}px)`;
-    card.style.zIndex = cards.length - i;
+      card.style.transform = `translateY(${-i * offset}px)`;
+      card.style.zIndex = cards.length - i;
   });
 }
 
