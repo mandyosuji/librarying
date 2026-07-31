@@ -168,9 +168,8 @@ a:hover {
 @media screen and (max-width: 576px) {
     .site-info {
         flex-direction: column;
-        padding-bottom: 20%;
         align-items: center;
-        padding: 10vh 0vh 10vh 0vh;
+        padding: 50px 0px 100px 0px;
     }
     .site-info div {
         display: flex;
@@ -179,7 +178,7 @@ a:hover {
         align-items: center;
     }
     .days-since {
-        padding-bottom: 10%;
+        padding-bottom: 25px;
     }
     .main {
         transform: scale(0.6);
