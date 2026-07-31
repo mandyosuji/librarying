@@ -159,3 +159,5 @@ fetch(`https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&s
 
   })
   .catch(err => console.error('Failed to load sheet data:', err));
+
+window.addEventListener('resize', layoutCards);
