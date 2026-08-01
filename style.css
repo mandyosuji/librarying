@@ -134,192 +134,7 @@ html, body {
 
 .nav a:first-child:hover::before {
     content: "\261A";
-    font-size: 3rem;
-    position: relative;
-    top: -8px;
-    left: -8px;
-}
-
-.nav a:last-child {
-    transform: rotate(-270deg);
-}
-
-.nav a:last-child:hover {
-    font-size: 0;
-}
-
-.nav a:last-child:hover::before {
-    content: "\261A";
-    font-size: 3rem;
-    position: relative;
-    top: -8px;
-    left: -8px;
-}
-
-a:link, a:visited {
-    text-decoration: none;
-    color: black;
-}
-
-a:hover {
-    font-style: oblique;
-    font-weight: bold;
-}
-
-@media screen and (max-width: 710px) {
-    .site-info .site-title, .days-since{
-        display: none;
-    }
-
-    .about {
-        position: fixed;
-        top:30px;
-        right:30px;
-    }
-
-    .main {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
-
-html, body {
-    overflow: hidden;
-    user-select: none;
-    height: 100%;
-}
-
-.site-info {
-    font-family: monospace;
-    padding: 25px 100px 0px 50px;
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-}
-
-.site-title {
-    font-size: large;
-    font-weight: bold;
-}
-
-.about {
-    font-size: normal;
-}
-
-.main {
-    display: flex;
-    flex-direction: column;
-    justify-content:center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
-
-.stack {
-    position: relative;
-    width: min(700px, 90vw);
-    height: min(400px, 51vw);
-}
-
-.hole-punch {
-    width: 35px;
-    height: 35px;
-    background-color: white;
-    border: 1px solid black;
-    border-radius: 50%;
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translate(-50%);
-    z-index: 9999;
-}
-
-.tab {
-    --tab-height: min(50px, 6.4vw);
-    position: absolute;
-    left: -1px;
-    top: calc(-1 * var(--tab-height));
-    width: min(110px, 14.1vw);
-    height: var(--tab-height);
-    border: 1px solid black;
-    border-bottom: none;
-    border-radius: 8px 8px 0 0;
-    background-color: white;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    font-family: monospace;
-}
-
-.card {
-    width: min(700px, 90vw);
-    height: min(400px, 51vw);
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: white;
-    border: 1px solid black;
-    display: flex;
-    box-sizing: border-box;
-    padding: 10px 50px 0px 50px ;
-    font-family:'Courier New', Courier, monospace;
-}
-
-.content {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-}
-
-.details {
-    margin-top: 25px;
-}
-
-.date {
-    width: 70px;
-    flex-shrink: 0;
-    white-space: pre-line;
-}
-
-.library-name {
-    margin-left: 10%;
-}
-
-.nav {
-    width: min(630px, 81vw);
-    height: 1.5rem;
-    line-height: 4rem;
-    display: flex;
-    justify-content: space-between;
-    padding-top: 10px;
-    font-family: monospace;
     font-size: clamp(1.5rem, 8vw, 3rem);
-    position: absolute;
-    bottom: 25px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 9998;
-}
-
-.nav a {
-    display: inline-flex;
-    align-items: flex-end;
-    justify-content: center;
-    width: 1.2rem;
-    height: 4rem;
-    transform: rotate(-90deg);
-}
-
-.nav a:first-child:hover {
-    font-size: 0;
-}
-
-.nav a:first-child:hover::before {
-    content: "\261A";
-    font-size: 3rem;
     position: relative;
     top: -8px;
     left: -8px;
@@ -335,7 +150,7 @@ html, body {
 
 .nav a:last-child:hover::before {
     content: "\261A";
-    font-size: 3rem;
+    font-size: clamp(1.5rem, 8vw, 3rem);
     position: relative;
     top: -8px;
     left: -8px;
@@ -364,15 +179,12 @@ a:hover {
 
     .main {
         width: 100%;
-        display: flex;
-        justify-content: center;
     }
 
     .stack {
-        height: 100vw;
+        height: 110vw;
     }
     .card {
-        height: 100vw;
+        height: 110vw;
     }
-  }
   }
