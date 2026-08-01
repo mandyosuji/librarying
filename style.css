@@ -172,6 +172,10 @@ a:hover {
         display: none;
     }
 
+    .site-info {
+        margin-bottom: 0px;
+    }
+
     .about {
         position: fixed;
         top:30px;
