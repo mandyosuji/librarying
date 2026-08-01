@@ -188,4 +188,8 @@ a:hover {
     .card {
         height: 110vw;
     }
+
+    .details {
+        margin-left: -70px;
+    }
   }
