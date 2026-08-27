@@ -34,6 +34,23 @@ a:hover {
     flex-direction: column;
 }
 
+#gallery {
+    margin-top: 40px;
+    max-width: 40vw;
+    max-height: 50vh;
+}
+
+#slide {
+    max-width: 100%;
+    max-height: 90vh;
+    display: block;
+}
+
+#status {
+    color: #888;
+    text-align: center;
+}
+
 @media screen and (max-width: 710px) {
     .back {
         position: fixed;
